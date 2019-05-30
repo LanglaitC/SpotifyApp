@@ -1,0 +1,33 @@
+<div class="d-flex flex-wrap">
+  <div class="col-12" *ngFor="let elmt of results">
+    <h4>{{elmt.label}}</h4>
+    <ng-container *ngIf="elmt.type == 'tracks' else album">
+      <ul>
+        <li *ngFor="let item of elmt.result.items; let i = index" class="list-elmt">
+          <div class="main-container d-flex">
+            <div class="img-container"><img src="{{item.album.images[0].url}}" height="100" alt=""></div>
+            <div class="legend-container">
+              <p>{{item.name}} : <span class="font-weight-bold">{{item.artists[0].name}}</span></p>
+              <span>{{ item.duration }}</span>
+            </div>
+          </div>
+          <div class="rank-container">{{i + 1}}</div>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #album>
+        <ul>
+          <li *ngFor="let item of elmt.result.items; let i = index" class="list-elmt">
+            <div class="main-container d-flex">
+              <div class="img-container"><img src="{{item.images[0].url}}" height="100" alt=""></div>
+              <div class="legend-container">
+                <p><span class="font-weight-bold">{{item.name}}</span></p>
+                <span><b>Genres :</b> {{item.parsed_genres}}</span>
+              </div>
+            </div>
+            <div class="rank-container">{{i + 1}}</div>
+          </li>
+        </ul>
+    </ng-template>
+  </div>
+</div>

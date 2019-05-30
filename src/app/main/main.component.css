@@ -1,0 +1,32 @@
+.list-elmt {
+    background-color: darkgrey;
+    list-style-type: none;
+    border: black 2px solid;
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-container {
+    height: 100%;
+}
+
+.legend-container {
+    padding: 10px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+h4 {
+    margin: 20px;
+}
+
+.rank-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 100px;
+    font-weight: bold;
+}
